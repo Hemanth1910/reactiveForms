@@ -1,0 +1,21 @@
+[
+    {
+        "name" : "raj",
+        "email" : "raj@gmail.com",
+        "password" : "123456",
+        "contact" : "9999998745"
+    },
+
+    {
+        "name" : "ramesh",
+        "email" : "ramesh@gmail.com",
+        "password" : "123456",
+        "contact" : "9874587412"
+    }, 
+    {
+        "name" : "rahul",
+        "email" : "rahul@gmail.com",
+        "password" : "123456",
+        "contact" : "7458744145"
+    }
+]

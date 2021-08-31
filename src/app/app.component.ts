@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
@@ -13,7 +14,9 @@ export class AppComponent implements OnInit{
    result_data : any = [];
    searchValue : any = '';
 
-  constructor( private formBuilder: FormBuilder, private service : HttpClient){}
+  constructor( private formBuilder: FormBuilder, private service : HttpClient){
+    console.log("hi")
+  }
   
   ngOnInit(){
     this.signInForm = this.formBuilder.group({
@@ -22,17 +25,12 @@ export class AppComponent implements OnInit{
       password: ['', [Validators.required]],
       contact: ['', [Validators.required ]]
     });
-    this.service.get('../assets/data.json').subscribe((res: any ) =>{
-      console.log("Res_data", res)
-      this.result_data = res
-    });
   }
 
   onSubmit() {
     if (this.signInForm.status === 'INVALID') {
       console.log("Hi", this.signInForm )
-        alert("Please enter all details")
-        
+        alert("Please enter all details")        
     }else{
       console.log("Hi", this.signInForm.value)
       let obj ={
